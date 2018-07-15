@@ -177,6 +177,17 @@ class Profiles extends Component {
                     options={options}
                     info="Select Your Blood Group"
                   />
+
+                  <div className="text-center">
+                    {this.state.blood ? (
+                      <img
+                        src={require("../../img/chart.gif")}
+                        alt=""
+                        className="img-responsive"
+                        style={{ width: "300px" }}
+                      />
+                    ) : null}
+                  </div>
                 </div>
               </div>
 
