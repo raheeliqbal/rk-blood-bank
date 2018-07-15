@@ -11,7 +11,6 @@ class CreateProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      handle: "",
       blood: "",
       dateofbirth: "",
       location: "",
@@ -43,7 +42,6 @@ class CreateProfile extends Component {
 
       // Set component fields state
       this.setState({
-        handle: profile.handle,
         blood: profile.blood,
         dateofbirth: profile.dateofbirth,
         location: profile.location
@@ -55,7 +53,6 @@ class CreateProfile extends Component {
     e.preventDefault();
 
     const profileData = {
-      handle: this.state.handle,
       blood: this.state.blood,
       dateofbirth: this.state.dateofbirth,
       location: this.state.location
@@ -95,14 +92,6 @@ class CreateProfile extends Component {
               <h1 className="display-4 text-center">Edit Profile</h1>
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
-                <TextFieldGroup
-                  placeholder="* Profile Handle"
-                  name="handle"
-                  value={this.state.handle}
-                  onChange={this.onChange}
-                  error={errors.handle}
-                  info="A unique handle for your profile URL. Your full name, company name, nickname"
-                />
                 <SelectListGroup
                   name="blood"
                   value={this.state.blood}

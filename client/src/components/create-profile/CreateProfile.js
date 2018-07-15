@@ -10,7 +10,6 @@ class CreateProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      handle: "",
       blood: "",
       dateofbirth: "",
       location: "",
@@ -36,7 +35,6 @@ class CreateProfile extends Component {
     e.preventDefault();
 
     const profileData = {
-      handle: this.state.handle,
       blood: this.state.blood,
       dateofbirth: this.state.dateofbirth,
       location: this.state.location
@@ -61,8 +59,8 @@ class CreateProfile extends Component {
       { label: "A-", value: "A-" },
       { label: "B+", value: "B+" },
       { label: "B-", value: "B-" },
-      { label: "0+", value: "0+" },
-      { label: "0-", value: "0-" }
+      { label: "O+", value: "O+" },
+      { label: "O-", value: "O-" }
     ];
 
     return (
@@ -76,14 +74,6 @@ class CreateProfile extends Component {
               </p>
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
-                <TextFieldGroup
-                  placeholder="* Profile Handle"
-                  name="handle"
-                  value={this.state.handle}
-                  onChange={this.onChange}
-                  error={errors.handle}
-                  info="A unique handle for your profile URL. Your full name, company name, nickname"
-                />
                 <SelectListGroup
                   placeholder="Blood Group"
                   name="blood"
